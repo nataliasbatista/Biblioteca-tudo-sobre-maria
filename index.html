@@ -32,6 +32,52 @@ h1,h2,h3{font-family:"Cormorant Garamond",serif;color:var(--navy);margin:0}h1{fo
 .download-sheet h3{font-size:1.9rem;margin:2px 34px 7px 0}.download-sheet p{color:var(--muted);font-size:.86rem;line-height:1.55;margin:0 0 16px}
 .form-grid{display:grid;gap:11px}.field label{display:block;font-size:.74rem;font-weight:800;color:var(--navy);margin:0 0 6px}.field input{width:100%;min-height:47px;border:1px solid var(--line);border-radius:13px;background:#fff;padding:0 13px;font:inherit;color:var(--ink);outline:none}.field input:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(185,148,76,.12)}
 .consent{display:flex;gap:9px;align-items:flex-start;font-size:.72rem;line-height:1.45;color:var(--muted)}.consent input{margin-top:2px}.download-sheet .btn{width:100%}.modal-note{font-size:.68rem;color:#8a8581;text-align:center;margin-top:9px}
+
+/* Ajustes mobile: largura da viewport e centralização dos mockups */
+html,body{width:100%;max-width:100%;overflow-x:hidden}
+body,main,.view,.hero,.section,.footer{max-width:100vw}
+.shell{max-width:1120px}
+.product-card,.product-visual,.detail-visual,.card-body{min-width:0;max-width:100%}
+.mockup-img{width:auto;height:auto;margin-left:auto;margin-right:auto;object-position:center center}
+.hero-actions,.card-actions,.detail-actions{max-width:100%}
+
+@media(max-width:719px){
+  .shell{width:100%;padding-left:16px;padding-right:16px;margin-left:auto;margin-right:auto}
+  .topbar-inner{min-width:0}
+  .brand{min-width:0}
+  .brand-name{font-size:1.22rem}
+  .brand-sub{font-size:.61rem}
+  .hero{padding:38px 0 30px}
+  .hero-grid{width:100%;min-width:0}
+  h1{font-size:clamp(2.35rem,12vw,3.5rem);overflow-wrap:anywhere}
+  .hero p,.detail-copy .lead{max-width:100%}
+  .hero-actions{display:grid;grid-template-columns:1fr;width:100%}
+  .hero-actions .btn{width:100%;padding-left:14px;padding-right:14px}
+  .trust-row,.cat-row{width:100%;max-width:100%;overscroll-behavior-inline:contain}
+  .section{padding:32px 0}
+  .section-heading{align-items:flex-start;flex-direction:column;gap:8px}
+  .section-heading h2{font-size:1.85rem}
+  .grid{width:100%;grid-template-columns:minmax(0,1fr)}
+  .product-card{width:100%;margin-left:auto;margin-right:auto}
+  .product-visual{width:100%;height:auto;min-height:280px;padding:18px 14px}
+  .product-visual .mockup-img{display:block;max-width:min(82vw,280px);max-height:250px;margin:0 auto}
+  .card-body{width:100%;padding:18px 16px 20px}
+  .card-actions{grid-template-columns:1fr;width:100%}
+  .card-actions .btn{width:100%}
+  .detail-grid{width:100%;grid-template-columns:minmax(0,1fr)}
+  .detail-visual{width:100%;min-height:320px;padding:20px 14px;margin:0 auto}
+  .detail-visual .mockup-img{display:block;max-width:min(82vw,300px);max-height:285px;margin:0 auto}
+  .detail-copy{min-width:0;width:100%}
+  .detail-copy h1{font-size:clamp(2.25rem,11vw,3.4rem);overflow-wrap:anywhere}
+  .detail-actions{grid-template-columns:1fr;width:100%}
+  .detail-actions .btn{width:100%}
+  .preview-grid{width:100%;grid-template-columns:repeat(2,minmax(0,1fr))}
+  .sample-page{min-width:0}
+  .cta-box{width:100%;padding:25px 18px}
+  .cta-box h2{font-size:1.8rem;overflow-wrap:anywhere}
+  .download-sheet{max-width:calc(100vw - 28px)}
+}
+
 @media(min-width:720px){.download-modal{align-items:center}.download-sheet{padding:26px}}
 @media(min-width:720px){body{padding-bottom:0}.bottom-nav{display:none}.desktop-nav{display:flex;gap:6px}.desktop-nav button{border:0;background:transparent;padding:9px 13px;border-radius:999px;color:var(--navy);font-weight:800;cursor:pointer}.desktop-nav button:hover{background:var(--rose2)}.hero{padding:72px 0 52px}.hero-grid{grid-template-columns:1.08fr .92fr}.grid{grid-template-columns:repeat(2,1fr)}.detail-grid{grid-template-columns:.9fr 1.1fr}.detail-actions{grid-template-columns:auto auto;justify-content:start}.preview-grid{grid-template-columns:repeat(4,1fr)}}
 @media(min-width:1020px){.grid{grid-template-columns:repeat(3,1fr)}.product-visual{height:320px}}
