@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#17213c">
+<title>Painel de Cadastro | Tudo Sobre Maria</title>
+<style>
+:root{--navy:#17213c;--gold:#b9944c;--cream:#fbf8f3;--paper:#fffdf9;--line:#eadfce;--muted:#6f6f73;--shadow:0 14px 34px rgba(23,33,60,.08)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--cream);color:#292b34;font-family:Inter,Arial,sans-serif}
+.wrap{width:min(920px,calc(100% - 20px));margin:auto}
+header{background:#fffdf9;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20}
+.head{min-height:66px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.brand{font-family:Georgia,serif;font-size:21px;font-weight:700;color:var(--navy)}
+.public{font-size:12px;font-weight:800;color:var(--navy);text-decoration:none}
+.hero{padding:30px 0 16px}
+.kicker{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);font-weight:900}
+h1,h2,h3{font-family:Georgia,serif;color:var(--navy);margin:0}
+h1{font-size:clamp(36px,8vw,60px);line-height:.98;margin:10px 0 12px}
+.hero p{margin:0;color:var(--muted);line-height:1.6}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:24px;padding:18px;box-shadow:var(--shadow);margin:16px 0}
+.card h2{font-size:30px;margin-bottom:8px}
+.card p{color:var(--muted);line-height:1.55;margin:0 0 16px}
+.buttons{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.btn{display:flex;align-items:center;justify-content:center;text-align:center;min-height:58px;border-radius:16px;text-decoration:none;font-weight:900;padding:12px;background:var(--navy);color:#fff}
+.note{margin-top:14px;border-radius:14px;background:#f7efdf;border:1px solid #ead7b4;padding:13px;color:#725c31;font-size:13px;line-height:1.5}
+.group{margin-top:22px;padding-top:18px;border-top:1px solid var(--line)}
+.group:first-of-type{border-top:0;padding-top:0;margin-top:0}
+.group h3{font-size:24px;margin-bottom:10px}
+.list{display:grid;gap:9px}
+.item{background:#fff;border:1px solid var(--line);border-radius:14px;padding:13px}
+.item strong{display:block;color:var(--navy);margin-bottom:4px}
+.item small{color:var(--muted)}
+.item-actions{display:flex;flex-wrap:wrap;gap:7px;margin-top:10px}
+.small{display:inline-flex;align-items:center;justify-content:center;min-height:38px;padding:7px 11px;border-radius:999px;text-decoration:none;font-size:12px;font-weight:800;border:1px solid var(--line);color:var(--navy);background:#fff}
+.small.copy{background:#f7efdf;color:#725c31;border-color:#ead7b4}
+.empty{border:1px dashed #d6cab9;border-radius:14px;padding:16px;color:var(--muted);text-align:center}
+@media(max-width:680px){.buttons{grid-template-columns:1fr}.brand{font-size:18px}.card{padding:15px}}
+</style>
+</head>
+<body>
+<header><div class="wrap head"><div class="brand">Painel de Cadastro</div><a class="public" href="./">Ver página pública</a></div></header>
+
+<main class="wrap">
+<section class="hero">
+  <div class="kicker">Tudo Sobre Maria</div>
+  <h1>Cadastre seus conteúdos.</h1>
+  <p>Este painel não redireciona para a página pública. Use os botões abaixo para cadastrar e-books, PDFs e cursos.</p>
+</section>
+
+<section class="card">
+  <h2>Novo cadastro</h2>
+  <p>Escolha a categoria.</p>
+  <div class="buttons">
+    <a class="btn" href="https://github.com/nataliasbatista/Biblioteca-tudo-sobre-maria/issues/new?template=ebook.yml&title=%5BPRODUTO%5D%5BEBOOK%5D%20">+ Cadastrar e-book</a>
+    <a class="btn" href="https://github.com/nataliasbatista/Biblioteca-tudo-sobre-maria/issues/new?template=pdf.yml&title=%5BPRODUTO%5D%5BPDF%5D%20">+ Cadastrar PDF</a>
+    <a class="btn" href="https://github.com/nataliasbatista/Biblioteca-tudo-sobre-maria/issues/new?template=curso.yml&title=%5BPRODUTO%5D%5BCURSO%5D%20">+ Cadastrar curso</a>
+  </div>
+  <div class="note"><strong>Depois do primeiro cadastro:</strong> o produto aparecerá abaixo. Aí você poderá usar o botão <strong>Cadastrar copy e imagens</strong>.</div>
+</section>
+
+<section class="card">
+  <h2>Produtos cadastrados</h2>
+  <p>Esta lista é carregada automaticamente do repositório.</p>
+  
+  <div class="group"><h3>E-books</h3><div id="EBOOK" class="list"><div class="empty">Carregando…</div></div></div>
+  <div class="group"><h3>PDFs</h3><div id="PDF" class="list"><div class="empty">Carregando…</div></div></div>
+  <div class="group"><h3>Cursos</h3><div id="CURSO" class="list"><div class="empty">Carregando…</div></div></div>
+</section>
+</main>
+
+<script>
+const REPO='nataliasbatista/Biblioteca-tudo-sobre-maria';
+const API='https://api.github.com/repos/'+REPO+'/issues?state=open&per_page=100';
+
+function esc(s=''){return String(s).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));}
+function typeOf(title=''){const m=title.match(/^\[PRODUTO\]\[(EBOOK|PDF|CURSO)\]/i);return m?m[1].toUpperCase():'';}
+function cleanName(title=''){return title.replace(/^\[PRODUTO\]\[[^\]]+\]\s*/,'').trim()||'Produto sem nome';}
+function copyUrl(no,name){const title='[COPY][#'+no+'] '+name;return 'https://github.com/'+REPO+'/issues/new?template=copy.yml&title='+encodeURIComponent(title);}
+
+async function load(){
+  try{
+    const r=await fetch(API,{headers:{Accept:'application/vnd.github+json'},cache:'no-store'});
+    if(!r.ok) throw new Error('API '+r.status);
+    const data=await r.json();
+    const products=data.filter(x=>!x.pull_request&&typeOf(x.title));
+    ['EBOOK','PDF','CURSO'].forEach(type=>{
+      const box=document.getElementById(type);
+      const list=products.filter(x=>typeOf(x.title)===type);
+      if(!list.length){box.innerHTML='<div class="empty">Nenhum item cadastrado nesta categoria ainda.</div>';return;}
+      box.innerHTML=list.map(x=>{
+        const name=cleanName(x.title);
+        return '<div class="item"><strong>'+esc(name)+'</strong><small>Cadastro #'+x.number+'</small><div class="item-actions"><a class="small" href="'+x.html_url+'" target="_blank">Abrir/editar cadastro</a><a class="small copy" href="'+copyUrl(x.number,name)+'">Cadastrar copy e imagens</a></div></div>';
+      }).join('');
+    });
+  }catch(e){
+    ['EBOOK','PDF','CURSO'].forEach(type=>document.getElementById(type).innerHTML='<div class="empty">Não foi possível carregar a lista. Os botões de cadastro acima continuam funcionando.</div>');
+  }
+}
+load();
+</script>
+</body>
+</html>
