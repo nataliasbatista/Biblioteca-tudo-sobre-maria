@@ -3,15 +3,86 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta http-equiv="refresh" content="0; url=./?admin=1">
+<meta name="theme-color" content="#17213c">
 <title>Administração | Biblioteca Tudo Sobre Maria</title>
 <style>
-body{font-family:Arial,sans-serif;background:#fbf8f3;color:#17213c;display:grid;place-items:center;min-height:100vh;margin:0;padding:20px;text-align:center}
-a{display:inline-flex;margin-top:16px;background:#17213c;color:white;text-decoration:none;padding:14px 22px;border-radius:999px;font-weight:700}
+:root{--navy:#17213c;--gold:#b9944c;--cream:#fbf8f3;--paper:#fffdf9;--line:#eadfce;--muted:#6f6f73;--rose:#f3e7e3;--shadow:0 14px 34px rgba(23,33,60,.08)}
+*{box-sizing:border-box}body{margin:0;background:var(--cream);color:#292b34;font-family:Inter,Arial,sans-serif}.wrap{width:min(980px,calc(100% - 20px));margin:auto}.top{position:sticky;top:0;z-index:20;background:rgba(251,248,243,.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}.topin{min-height:68px;display:flex;align-items:center;justify-content:space-between;gap:12px}.brand{font-family:Georgia,serif;color:var(--navy);font-size:22px;font-weight:700}.back{font-size:13px;font-weight:800;color:var(--navy);text-decoration:none}.hero{padding:28px 0 18px}.eyebrow{font-size:11px;letter-spacing:.17em;text-transform:uppercase;color:var(--gold);font-weight:900}h1,h2,h3{font-family:Georgia,serif;color:var(--navy);margin:0}h1{font-size:clamp(38px,8vw,64px);line-height:.96;margin:10px 0 12px}.hero p{color:var(--muted);line-height:1.6;margin:0;max-width:720px}.panel{background:var(--paper);border:1px solid var(--line);border-radius:24px;padding:18px;box-shadow:var(--shadow);margin:16px 0}.panel h2{font-size:30px;margin-bottom:7px}.panel p{color:var(--muted);margin:0 0 16px;line-height:1.55}.buttons{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.btn{display:flex;align-items:center;justify-content:center;text-align:center;min-height:58px;border-radius:16px;text-decoration:none;font-weight:900;padding:12px 14px;border:1px solid transparent}.btn.primary{background:var(--navy);color:white}.btn.gold{background:var(--gold);color:white}.btn.light{background:white;color:var(--navy);border-color:var(--line)}.category{border-top:1px solid var(--line);padding-top:18px;margin-top:18px}.category:first-of-type{border-top:0;padding-top:0;margin-top:0}.category h3{font-size:25px;margin-bottom:10px}.manage{display:grid;gap:10px;margin-top:12px}.item{border:1px solid var(--line);border-radius:16px;padding:14px;background:#fff}.item strong{color:var(--navy);display:block;margin-bottom:6px}.item small{color:var(--muted)}.item-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}.smallbtn{display:inline-flex;align-items:center;justify-content:center;min-height:40px;padding:8px 12px;border-radius:999px;text-decoration:none;font-weight:800;font-size:12px;border:1px solid var(--line);color:var(--navy);background:#fff}.smallbtn.copy{background:#f6eddc;color:#765d29;border-color:#e7d3aa}.empty{border:1px dashed #d7c9b8;border-radius:16px;padding:18px;color:var(--muted);text-align:center;background:rgba(255,255,255,.5)}
+.note{margin-top:14px;background:#f8f1e3;border:1px solid #e7d5b5;color:#765d29;padding:14px 16px;border-radius:16px;line-height:1.5;font-size:13px}
+@media(max-width:700px){.buttons{grid-template-columns:1fr}.panel{padding:15px}.topin{min-height:62px}.brand{font-size:19px}}
 </style>
 </head>
 <body>
-<div><h1>Abrindo o modo de cadastro…</h1><p>Se a página não abrir automaticamente, use o botão abaixo.</p><a href="./?admin=1">Abrir administração</a></div>
-<script>location.replace('./?admin=1');</script>
+<header class="top"><div class="wrap topin"><div class="brand">Administração • Tudo Sobre Maria</div><a class="back" href="./">Ver site público</a></div></header>
+
+<main class="wrap">
+<section class="hero">
+  <div class="eyebrow">modo de cadastro</div>
+  <h1>Cadastre seus produtos aqui.</h1>
+  <p>Esta página é só para administração. Os botões abaixo ficam sempre visíveis e abrem os formulários de cadastro diretamente no GitHub.</p>
+</section>
+
+<section class="panel">
+  <h2>Novo produto</h2>
+  <p>Escolha o tipo de conteúdo que deseja cadastrar.</p>
+  <div class="buttons">
+    <a class="btn primary" href="https://github.com/nataliasbatista/Biblioteca-tudo-sobre-maria/issues/new?template=ebook.yml&title=%5BPRODUTO%5D%5BEBOOK%5D%20">+ Cadastrar e-book</a>
+    <a class="btn primary" href="https://github.com/nataliasbatista/Biblioteca-tudo-sobre-maria/issues/new?template=pdf.yml&title=%5BPRODUTO%5D%5BPDF%5D%20">+ Cadastrar PDF</a>
+    <a class="btn primary" href="https://github.com/nataliasbatista/Biblioteca-tudo-sobre-maria/issues/new?template=curso.yml&title=%5BPRODUTO%5D%5BCURSO%5D%20">+ Cadastrar curso</a>
+  </div>
+  <div class="note"><strong>Depois do primeiro cadastro:</strong> o produto aparecerá abaixo em “Produtos cadastrados”. Então você poderá tocar em <strong>Cadastrar copy e imagens</strong> para completar a página de vendas daquele item.</div>
+</section>
+
+<section class="panel">
+  <h2>Produtos cadastrados</h2>
+  <p>Os itens cadastrados no GitHub aparecem aqui automaticamente.</p>
+
+  <div class="category">
+    <h3>E-books</h3>
+    <div id="EBOOK" class="manage"><div class="empty">Carregando e-books…</div></div>
+  </div>
+
+  <div class="category">
+    <h3>PDFs</h3>
+    <div id="PDF" class="manage"><div class="empty">Carregando PDFs…</div></div>
+  </div>
+
+  <div class="category">
+    <h3>Cursos</h3>
+    <div id="CURSO" class="manage"><div class="empty">Carregando cursos…</div></div>
+  </div>
+</section>
+</main>
+
+<script>
+const REPO='nataliasbatista/Biblioteca-tudo-sobre-maria';
+const API='https://api.github.com/repos/'+REPO+'/issues?state=open&per_page=100';
+
+function esc(s=''){return String(s).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));}
+function typeOf(title=''){const m=title.match(/^\[PRODUTO\]\[(EBOOK|PDF|CURSO)\]/i);return m?m[1].toUpperCase():'';}
+function cleanName(title=''){return title.replace(/^\[PRODUTO\]\[[^\]]+\]\s*/,'').trim()||'Produto sem nome';}
+function copyUrl(no,name){const title='[COPY][#'+no+'] '+name;return 'https://github.com/'+REPO+'/issues/new?template=copy.yml&title='+encodeURIComponent(title);}
+
+async function load(){
+  try{
+    const r=await fetch(API,{headers:{Accept:'application/vnd.github+json'},cache:'no-store'});
+    if(!r.ok) throw new Error('API '+r.status);
+    const data=await r.json();
+    const products=data.filter(x=>!x.pull_request&&typeOf(x.title));
+    ['EBOOK','PDF','CURSO'].forEach(type=>{
+      const box=document.getElementById(type);
+      const list=products.filter(x=>typeOf(x.title)===type);
+      if(!list.length){box.innerHTML='<div class="empty">Nenhum item cadastrado nesta categoria ainda.</div>';return;}
+      box.innerHTML=list.map(x=>{
+        const name=cleanName(x.title);
+        return '<div class="item"><strong>'+esc(name)+'</strong><small>Cadastro #'+x.number+'</small><div class="item-actions"><a class="smallbtn" href="'+x.html_url+'" target="_blank">Abrir/editar cadastro</a><a class="smallbtn copy" href="'+copyUrl(x.number,name)+'">Cadastrar copy e imagens</a></div></div>';
+      }).join('');
+    });
+  }catch(e){
+    ['EBOOK','PDF','CURSO'].forEach(type=>document.getElementById(type).innerHTML='<div class="empty">Não foi possível carregar a lista agora. Os botões de cadastro acima continuam funcionando.</div>');
+  }
+}
+load();
+</script>
 </body>
 </html>
