@@ -1,0 +1,66 @@
+name: Cadastrar copy e imagens
+description: Adicione a página de vendas/copy de um produto já cadastrado.
+title: "[COPY] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Abra este formulário **pelo botão "Cadastrar copy e imagens" dentro do produto**. Assim o título já virá com o número correto do produto. Não apague o código **[#número]** do título.
+  - type: input
+    id: headline
+    attributes:
+      label: Headline
+      placeholder: Título principal da página de vendas
+    validations:
+      required: true
+  - type: input
+    id: subheadline
+    attributes:
+      label: Subheadline
+      placeholder: Complemento da promessa ou benefício principal
+  - type: textarea
+    id: copy
+    attributes:
+      label: Copy principal
+      description: Texto de venda mais completo. Pode usar parágrafos.
+      placeholder: Explique o problema, a transformação e o valor do conteúdo.
+    validations:
+      required: true
+  - type: textarea
+    id: beneficios
+    attributes:
+      label: Benefícios
+      description: Coloque um benefício por linha.
+      placeholder: |
+        Benefício 1
+        Benefício 2
+        Benefício 3
+  - type: textarea
+    id: imagens
+    attributes:
+      label: Imagens da copy
+      description: Cole, arraste ou anexe aqui as imagens que deseja mostrar na página de vendas.
+      placeholder: Anexe as imagens aqui.
+  - type: input
+    id: cta
+    attributes:
+      label: Texto do CTA
+      placeholder: Quero acessar agora
+  - type: textarea
+    id: faq
+    attributes:
+      label: FAQ
+      description: Opcional. Use uma pergunta e resposta por linha no formato "Pergunta | Resposta".
+      placeholder: |
+        Como recebo o material? | O acesso é digital.
+        Consigo ler no celular? | Sim.
+  - type: dropdown
+    id: status
+    attributes:
+      label: Status
+      options:
+        - Publicado
+        - Rascunho
+      default: 0
+    validations:
+      required: true
