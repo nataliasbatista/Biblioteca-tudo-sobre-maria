@@ -25,6 +25,14 @@ h1,h2,h3{font-family:"Cormorant Garamond",serif;color:var(--navy);margin:0}h1{fo
 .benefit-list{display:grid;gap:12px}.benefit{display:flex;gap:11px;align-items:flex-start;border-bottom:1px solid var(--line);padding-bottom:12px}.check{width:24px;height:24px;border-radius:50%;background:var(--rose2);color:var(--navy);display:grid;place-items:center;font-size:.75rem;font-weight:900;flex:0 0 auto}.benefit strong{color:var(--navy);font-size:.9rem}.benefit div:last-child{font-size:.83rem;color:var(--muted);line-height:1.5}
 .preview-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.sample-page{aspect-ratio:.72;background:#fff;border:1px solid var(--line);box-shadow:0 8px 20px rgba(23,33,60,.05);padding:14px;border-radius:8px;overflow:hidden}.sample-page .tiny-star{text-align:center;color:var(--gold);font-size:.65rem}.sample-page h4{font-family:"Cormorant Garamond",serif;color:var(--navy);text-align:center;font-size:.82rem;margin:7px 0 10px}.lines{display:grid;gap:5px}.line{height:3px;border-radius:4px;background:#e9e4df}.line.short{width:65%}.line.mid{width:82%}.quote-box{border-left:2px solid var(--gold);padding-left:6px;margin:11px 0;font-size:.45rem;color:#6e6862;line-height:1.4}
 .cta-box{border-radius:26px;padding:28px 22px;background:var(--navy);color:white;text-align:center}.cta-box h2{color:white;font-size:2rem}.cta-box p{color:#d9dfeb;line-height:1.6;font-size:.9rem}.cta-box .btn{background:white;color:var(--navy);width:100%}.faq{display:grid;gap:9px}.faq details{background:#fff;border:1px solid var(--line);border-radius:14px;padding:15px}.faq summary{font-weight:800;color:var(--navy);cursor:pointer;font-size:.88rem}.faq p{font-size:.82rem;line-height:1.55;color:var(--muted)}.notice{font-size:.73rem;color:var(--muted);margin-top:10px;line-height:1.5}.empty-state{text-align:center;padding:55px 12px}.empty-state .big{font-family:"Cormorant Garamond",serif;font-size:2.5rem;color:var(--navy)}.empty-state p{color:var(--muted);line-height:1.6}
+
+.download-modal{position:fixed;inset:0;background:rgba(12,18,34,.56);backdrop-filter:blur(5px);display:none;align-items:flex-end;justify-content:center;z-index:120;padding:14px}
+.download-modal.open{display:flex}.download-sheet{width:min(520px,100%);background:#fffdf9;border:1px solid var(--line);border-radius:26px;padding:22px;box-shadow:0 24px 70px rgba(12,18,34,.28);position:relative}
+.modal-close{position:absolute;right:16px;top:14px;border:0;background:transparent;color:var(--navy);font-size:1.4rem;cursor:pointer}
+.download-sheet h3{font-size:1.9rem;margin:2px 34px 7px 0}.download-sheet p{color:var(--muted);font-size:.86rem;line-height:1.55;margin:0 0 16px}
+.form-grid{display:grid;gap:11px}.field label{display:block;font-size:.74rem;font-weight:800;color:var(--navy);margin:0 0 6px}.field input{width:100%;min-height:47px;border:1px solid var(--line);border-radius:13px;background:#fff;padding:0 13px;font:inherit;color:var(--ink);outline:none}.field input:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(185,148,76,.12)}
+.consent{display:flex;gap:9px;align-items:flex-start;font-size:.72rem;line-height:1.45;color:var(--muted)}.consent input{margin-top:2px}.download-sheet .btn{width:100%}.modal-note{font-size:.68rem;color:#8a8581;text-align:center;margin-top:9px}
+@media(min-width:720px){.download-modal{align-items:center}.download-sheet{padding:26px}}
 @media(min-width:720px){body{padding-bottom:0}.bottom-nav{display:none}.desktop-nav{display:flex;gap:6px}.desktop-nav button{border:0;background:transparent;padding:9px 13px;border-radius:999px;color:var(--navy);font-weight:800;cursor:pointer}.desktop-nav button:hover{background:var(--rose2)}.hero{padding:72px 0 52px}.hero-grid{grid-template-columns:1.08fr .92fr}.grid{grid-template-columns:repeat(2,1fr)}.detail-grid{grid-template-columns:.9fr 1.1fr}.detail-actions{grid-template-columns:auto auto;justify-content:start}.preview-grid{grid-template-columns:repeat(4,1fr)}}
 @media(min-width:1020px){.grid{grid-template-columns:repeat(3,1fr)}.product-visual{height:320px}}
 </style></head>
@@ -112,7 +120,7 @@ h1,h2,h3{font-family:"Cormorant Garamond",serif;color:var(--navy);margin:0}h1{fo
  <div class="shell back-row"><button class="back" onclick="go('gratuitos')">← Voltar aos gratuitos</button></div>
  <div class="detail-hero"><div class="shell detail-grid">
   <div class="detail-visual"><div class="phone-stack" style="width:170px;height:285px"><div class="phone-wall"><svg viewBox="0 0 100 130"><circle cx="50" cy="35" r="15" fill="none" stroke="#b9944c" stroke-width="2"/><path d="M31 37c3-14 33-16 38 0-5-8-10-12-19-12s-14 4-19 12z" fill="#17213c"/><path d="M50 51c-20 11-30 30-34 65 13-11 23-16 34-19 11 3 21 8 34 19-4-35-14-54-34-65z" fill="#73839a"/></svg></div></div></div>
-  <div class="detail-copy"><div class="badges"><span class="badge green">Material gratuito</span></div><h1>12 Papéis de Parede Marianos</h1><p class="lead">Uma coleção de imagens suaves e delicadas para levar uma presença mariana para a tela do seu celular.</p><div class="detail-price">Grátis</div><div class="detail-actions"><button class="btn btn-primary" onclick="alert('A entrega automática será conectada na próxima etapa do MVP.')">Quero receber gratuitamente</button></div><p class="notice">A entrega automática será conectada depois que definirmos o canal de envio.</p></div>
+  <div class="detail-copy"><div class="badges"><span class="badge green">Material gratuito</span></div><h1>12 Papéis de Parede Marianos</h1><p class="lead">Uma coleção de imagens suaves e delicadas para levar uma presença mariana para a tela do seu celular.</p><div class="detail-price">Grátis</div><div class="detail-actions"><button class="btn btn-primary" onclick="openDownloadModal(this.closest('section').id)">Quero receber gratuitamente</button></div><p class="notice">A página é aberta para todos. Os dados só são solicitados quando você decide baixar o material gratuito.</p></div>
  </div></div>
  <div class="section"><div class="shell"><div class="section-heading"><div><h2>O que está incluído</h2></div></div><div class="benefit-list">
    <div class="benefit"><span class="check">✓</span><div><strong>12 arquivos</strong><div>Uma coleção completa, pronta para uso e compartilhamento.</div></div></div>
@@ -122,7 +130,7 @@ h1,h2,h3{font-family:"Cormorant Garamond",serif;color:var(--navy);margin:0}h1{fo
  <div class="shell back-row"><button class="back" onclick="go('gratuitos')">← Voltar aos gratuitos</button></div>
  <div class="detail-hero"><div class="shell detail-grid">
   <div class="detail-visual"><div class="phone-stack" style="width:170px;height:285px"><div class="phone-wall"><svg viewBox="0 0 100 130"><circle cx="50" cy="35" r="15" fill="none" stroke="#b9944c" stroke-width="2"/><path d="M31 37c3-14 33-16 38 0-5-8-10-12-19-12s-14 4-19 12z" fill="#17213c"/><path d="M50 51c-20 11-30 30-34 65 13-11 23-16 34-19 11 3 21 8 34 19-4-35-14-54-34-65z" fill="#73839a"/></svg></div></div></div>
-  <div class="detail-copy"><div class="badges"><span class="badge green">Material gratuito</span></div><h1>12 Cartões Marianos para WhatsApp</h1><p class="lead">Doze cartões com pequenas mensagens de fé, paz, saúde e esperança para compartilhar pelo WhatsApp.</p><div class="detail-price">Grátis</div><div class="detail-actions"><button class="btn btn-primary" onclick="alert('A entrega automática será conectada na próxima etapa do MVP.')">Quero receber gratuitamente</button></div><p class="notice">A entrega automática será conectada depois que definirmos o canal de envio.</p></div>
+  <div class="detail-copy"><div class="badges"><span class="badge green">Material gratuito</span></div><h1>12 Cartões Marianos para WhatsApp</h1><p class="lead">Doze cartões com pequenas mensagens de fé, paz, saúde e esperança para compartilhar pelo WhatsApp.</p><div class="detail-price">Grátis</div><div class="detail-actions"><button class="btn btn-primary" onclick="openDownloadModal(this.closest('section').id)">Quero receber gratuitamente</button></div><p class="notice">A página é aberta para todos. Os dados só são solicitados quando você decide baixar o material gratuito.</p></div>
  </div></div>
  <div class="section"><div class="shell"><div class="section-heading"><div><h2>O que está incluído</h2></div></div><div class="benefit-list">
    <div class="benefit"><span class="check">✓</span><div><strong>12 arquivos</strong><div>Uma coleção completa, pronta para uso e compartilhamento.</div></div></div>
@@ -152,10 +160,32 @@ h1,h2,h3{font-family:"Cormorant Garamond",serif;color:var(--navy);margin:0}h1{fo
   <div class="benefit"><span class="check">✓</span><div><strong>Para o dia a dia</strong><div>Uma presença de fé, esperança e devoção em cada mês.</div></div></div>
  </div></div></div>
 </section></main>
+
+<div id="downloadModal" class="download-modal" role="dialog" aria-modal="true" aria-labelledby="downloadTitle">
+  <div class="download-sheet">
+    <button class="modal-close" onclick="closeDownloadModal()" aria-label="Fechar">×</button>
+    <div class="badge green">Download gratuito</div>
+    <h3 id="downloadTitle">Receba seu material</h3>
+    <p>Você pode navegar por toda a biblioteca sem cadastro. Para liberar este download, informe apenas seu login/e-mail e WhatsApp.</p>
+    <form class="form-grid" onsubmit="submitDownload(event)">
+      <input type="hidden" id="downloadMaterial" value="">
+      <div class="field"><label for="downloadLogin">Login ou e-mail</label><input id="downloadLogin" name="login" type="text" autocomplete="email" placeholder="Seu e-mail ou login" required></div>
+      <div class="field"><label for="downloadWhatsapp">WhatsApp</label><input id="downloadWhatsapp" name="whatsapp" type="tel" inputmode="tel" placeholder="(71) 99999-9999" required></div>
+      <label class="consent"><input type="checkbox" required><span>Concordo com o uso destes dados para liberar e enviar o material solicitado.</span></label>
+      <button class="btn btn-primary" type="submit">Liberar download →</button>
+      <div class="modal-note">O cadastro não é necessário para visualizar os e-books, páginas ou preços.</div>
+    </form>
+  </div>
+</div>
 <nav class="bottom-nav"><button id="nav-home" class="active" onclick="go('home')"><span class="nav-icon">⌂</span><span>Início</span></button><button id="nav-ebooks" onclick="go('ebooks')"><span class="nav-icon">▦</span><span>E-books</span></button><button id="nav-gratuitos" onclick="go('gratuitos')"><span class="nav-icon">♡</span><span>Grátis</span></button><button id="nav-cursos" onclick="go('cursos')"><span class="nav-icon">▷</span><span>Cursos</span></button></nav>
 <footer class="footer"><div class="shell">Tudo Sobre Maria • Biblioteca digital<br><span style="opacity:.7">Conteúdo religioso e devocional. Produtos digitais.</span></div></footer>
 <script>
 const views=[...document.querySelectorAll('.view')];
 function go(id,push=true){const el=document.getElementById(id)||document.getElementById('home');views.forEach(v=>v.classList.toggle('active',v===el));document.querySelectorAll('.bottom-nav button').forEach(b=>b.classList.remove('active'));const root=['home','ebooks','gratuitos','cursos'].includes(id)?id:(['aparicoes','acalma','7dias','calendario'].includes(id)?'ebooks':'gratuitos');const nav=document.getElementById('nav-'+root);if(nav)nav.classList.add('active');if(push)history.pushState({view:id},'','#'+id);window.scrollTo({top:0,behavior:'smooth'});}
+
+function openDownloadModal(material){document.getElementById('downloadMaterial').value=material||'';document.getElementById('downloadModal').classList.add('open');document.body.style.overflow='hidden';setTimeout(()=>document.getElementById('downloadLogin').focus(),50);}
+function closeDownloadModal(){document.getElementById('downloadModal').classList.remove('open');document.body.style.overflow='';}
+function submitDownload(e){e.preventDefault();const material=document.getElementById('downloadMaterial').value;alert('Cadastro recebido. A entrega automática deste material será conectada na próxima etapa.');closeDownloadModal();}
+document.getElementById('downloadModal').addEventListener('click',e=>{if(e.target.id==='downloadModal')closeDownloadModal();});
 window.addEventListener('popstate',()=>go(location.hash.replace('#','')||'home',false));window.addEventListener('DOMContentLoaded',()=>{if(location.hash)go(location.hash.slice(1),false);});
 </script></body></html>
