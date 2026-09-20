@@ -1,0 +1,59 @@
+name: Cadastrar PDF
+description: Adicione um novo pdf ao catálogo da Biblioteca Tudo Sobre Maria.
+title: "[PRODUTO][PDF] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Preencha os dados abaixo. **Não apague o prefixo [PRODUTO][PDF] do título.**
+        Depois de salvar este cadastro, o item aparecerá automaticamente no site.
+  - type: input
+    id: nome
+    attributes:
+      label: Nome do produto
+      placeholder: Ex. Meu novo PDF
+    validations:
+      required: true
+  - type: textarea
+    id: descricao
+    attributes:
+      label: Descrição curta
+      description: Texto que aparecerá no card do catálogo.
+      placeholder: Escreva uma descrição curta e objetiva.
+    validations:
+      required: true
+  - type: input
+    id: preco
+    attributes:
+      label: Preço
+      description: Use "Grátis" para materiais gratuitos ou informe o valor, ex. R$ 7,00.
+      placeholder: R$ 0,00
+    validations:
+      required: true
+  - type: input
+    id: link
+    attributes:
+      label: Link principal
+      description: Checkout, download ou página de inscrição.
+      placeholder: https://...
+  - type: input
+    id: botao
+    attributes:
+      label: Texto do botão principal
+      placeholder: Comprar / Baixar / Inscrever-se
+  - type: textarea
+    id: imagem
+    attributes:
+      label: Imagem principal
+      description: Cole, arraste ou anexe aqui a imagem que será usada no card. Preferência por PNG com fundo transparente.
+      placeholder: Anexe a imagem aqui.
+  - type: dropdown
+    id: status
+    attributes:
+      label: Status
+      options:
+        - Publicado
+        - Rascunho
+      default: 0
+    validations:
+      required: true
